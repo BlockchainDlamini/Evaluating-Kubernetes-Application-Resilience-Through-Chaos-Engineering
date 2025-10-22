@@ -1,0 +1,314 @@
+kind: Workflow
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: pod-http-modify-header
+  namespace: litmus
+  labels:
+    infra_id: 3b51261c-a95b-4ce2-af01-d03fbb2038e3
+    revision_id: bd8c2548-8091-477b-b71c-9d2ee09ee8dd
+    workflow_id: 57e0cb5d-dc73-495a-9307-bec975c3c27d
+    workflows.argoproj.io/controller-instanceid: 3b51261c-a95b-4ce2-af01-d03fbb2038e3
+spec:
+  templates:
+    - name: pod-http-modify-header
+      inputs: {}
+      outputs: {}
+      metadata: {}
+      steps:
+        - - name: install-chaos-faults
+            template: install-chaos-faults
+            arguments: {}
+        - - name: pod-http-modify-header-znh
+            template: pod-http-modify-header-znh
+            arguments: {}
+        - - name: cleanup-chaos-resources
+            template: cleanup-chaos-resources
+            arguments: {}
+    - name: install-chaos-faults
+      inputs:
+        artifacts:
+          - name: pod-http-modify-header-znh
+            path: /tmp/pod-http-modify-header-znh.yaml
+            raw:
+              data: >
+                apiVersion: litmuschaos.io/v1alpha1
+
+                description:
+                  message: >
+                    It injects the chaos inside the pod which modifies the header of the
+                    request/response from the provided application server to the headers
+                    provided by the user and reverts after a specified duration
+                kind: ChaosExperiment
+
+                metadata:
+                  name: pod-http-modify-header
+                  labels:
+                    name: pod-http-modify-header
+                    app.kubernetes.io/part-of: litmus
+                    app.kubernetes.io/component: chaosexperiment
+                    app.kubernetes.io/version: 3.21.0
+                spec:
+                  definition:
+                    scope: Namespaced
+                    permissions:
+                      - apiGroups:
+                          - ""
+                        resources:
+                          - pods
+                        verbs:
+                          - create
+                          - delete
+                          - get
+                          - list
+                          - patch
+                          - update
+                          - deletecollection
+                      - apiGroups:
+                          - ""
+                        resources:
+                          - events
+                        verbs:
+                          - create
+                          - get
+                          - list
+                          - patch
+                          - update
+                      - apiGroups:
+                          - ""
+                        resources:
+                          - configmaps
+                        verbs:
+                          - get
+                          - list
+                      - apiGroups:
+                          - ""
+                        resources:
+                          - pods/log
+                        verbs:
+                          - get
+                          - list
+                          - watch
+                      - apiGroups:
+                          - ""
+                        resources:
+                          - pods/exec
+                        verbs:
+                          - get
+                          - list
+                          - create
+                      - apiGroups:
+                          - apps
+                        resources:
+                          - deployments
+                          - statefulsets
+                          - replicasets
+                          - daemonsets
+                        verbs:
+                          - list
+                          - get
+                      - apiGroups:
+                          - apps.openshift.io
+                        resources:
+                          - deploymentconfigs
+                        verbs:
+                          - list
+                          - get
+                      - apiGroups:
+                          - ""
+                        resources:
+                          - replicationcontrollers
+                        verbs:
+                          - get
+                          - list
+                      - apiGroups:
+                          - argoproj.io
+                        resources:
+                          - rollouts
+                        verbs:
+                          - list
+                          - get
+                      - apiGroups:
+                          - batch
+                        resources:
+                          - jobs
+                        verbs:
+                          - create
+                          - list
+                          - get
+                          - delete
+                          - deletecollection
+                      - apiGroups:
+                          - litmuschaos.io
+                        resources:
+                          - chaosengines
+                          - chaosexperiments
+                          - chaosresults
+                        verbs:
+                          - create
+                          - list
+                          - get
+                          - patch
+                          - update
+                          - delete
+                    image: litmuschaos.docker.scarf.sh/litmuschaos/go-runner:3.21.0
+                    imagePullPolicy: Always
+                    args:
+                      - -c
+                      - ./experiments -name pod-http-modify-header
+                    command:
+                      - /bin/bash
+                    env:
+                      - name: TARGET_CONTAINER
+                        value: ""
+                      - name: LIB_IMAGE
+                        value: litmuschaos.docker.scarf.sh/litmuschaos/go-runner:3.21.0
+                      - name: HEADERS_MAP
+                        value: "{}"
+                      - name: HEADER_MODE
+                        value: response
+                      - name: TARGET_SERVICE_PORT
+                        value: "80"
+                      - name: TOXICITY
+                        value: "100"
+                      - name: PROXY_PORT
+                        value: "20000"
+                      - name: NETWORK_INTERFACE
+                        value: eth0
+                      - name: TOTAL_CHAOS_DURATION
+                        value: "60"
+                      - name: RAMP_TIME
+                        value: ""
+                      - name: DEFAULT_HEALTH_CHECK
+                        value: "false"
+                      - name: PODS_AFFECTED_PERC
+                        value: ""
+                      - name: TARGET_PODS
+                        value: ""
+                      - name: CONTAINER_RUNTIME
+                        value: containerd
+                      - name: SOCKET_PATH
+                        value: /run/containerd/containerd.sock
+                      - name: NODE_LABEL
+                        value: ""
+                      - name: SEQUENCE
+                        value: parallel
+                    labels:
+                      name: pod-http-modify-header
+                      app.kubernetes.io/part-of: litmus
+                      app.kubernetes.io/component: experiment-job
+                      app.kubernetes.io/runtime-api-usage: "true"
+                      app.kubernetes.io/version: 3.21.0
+      outputs: {}
+      metadata: {}
+      container:
+        name: ""
+        image: litmuschaos/k8s:2.11.0
+        command:
+          - sh
+          - -c
+        args:
+          - kubectl apply -f /tmp/ -n {{workflow.parameters.adminModeNamespace}}
+            && sleep 30
+        resources: {}
+    - name: cleanup-chaos-resources
+      inputs: {}
+      outputs: {}
+      metadata: {}
+      container:
+        name: ""
+        image: litmuschaos/k8s:2.11.0
+        command:
+          - sh
+          - -c
+        args:
+          - kubectl delete chaosengine -l workflow_run_id={{workflow.uid}} -n
+            {{workflow.parameters.adminModeNamespace}}
+        resources: {}
+    - name: pod-http-modify-header-znh
+      inputs:
+        artifacts:
+          - name: pod-http-modify-header-znh
+            path: /tmp/chaosengine-pod-http-modify-header-znh.yaml
+            raw:
+              data: >
+                apiVersion: litmuschaos.io/v1alpha1
+
+                kind: ChaosEngine
+
+                metadata:
+                  namespace: "{{workflow.parameters.adminModeNamespace}}"
+                  labels:
+                    workflow_run_id: "{{ workflow.uid }}"
+                    workflow_name: pod-http-modify-header
+                  annotations:
+                    probeRef: '[{"name":"health-check","mode":"SOT"}]'
+                  generateName: pod-http-modify-header-znh
+                spec:
+                  engineState: active
+                  appinfo:
+                    appns: default
+                    applabel: app=mealie
+                    appkind: deployment
+                  chaosServiceAccount: litmus-admin
+                  experiments:
+                    - name: pod-http-modify-header
+                      spec:
+                        components:
+                          env:
+                            - name: TARGET_CONTAINER
+                              value: nginx
+                            - name: LIB_IMAGE
+                              value: litmuschaos.docker.scarf.sh/litmuschaos/go-runner:3.21.0
+                            - name: HEADERS_MAP
+                              value: "{}"
+                            - name: HEADER_MODE
+                              value: response
+                            - name: TARGET_SERVICE_PORT
+                              value: "80"
+                            - name: TOXICITY
+                              value: "100"
+                            - name: PROXY_PORT
+                              value: "20000"
+                            - name: NETWORK_INTERFACE
+                              value: eth0
+                            - name: TOTAL_CHAOS_DURATION
+                              value: "60"
+                            - name: RAMP_TIME
+                              value: ""
+                            - name: DEFAULT_HEALTH_CHECK
+                              value: "false"
+                            - name: PODS_AFFECTED_PERC
+                              value: "100"
+                            - name: TARGET_PODS
+                              value: mealie-deployment-65677948b-4sgvb
+                            - name: CONTAINER_RUNTIME
+                              value: docker
+                            - name: SOCKET_PATH
+                              value: /var/run/docker.sock
+                            - name: NODE_LABEL
+                              value: ",kubernetes.io/hostname=minikube"
+                            - name: SEQUENCE
+                              value: parallel
+      outputs: {}
+      metadata:
+        labels:
+          weight: "10"
+      container:
+        name: ""
+        image: docker.io/litmuschaos/litmus-checker:2.11.0
+        args:
+          - -file=/tmp/chaosengine-pod-http-modify-header-znh.yaml
+          - -saveName=/tmp/engine-name
+        resources: {}
+  entrypoint: pod-http-modify-header
+  arguments:
+    parameters:
+      - name: adminModeNamespace
+        value: litmus
+  serviceAccountName: argo-chaos
+  podGC:
+    strategy: OnWorkflowCompletion
+  securityContext:
+    runAsUser: 1000
+    runAsNonRoot: true
+status: {}
