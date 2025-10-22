@@ -1,0 +1,713 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:25:05Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:25:05Z"
+  message: Starting kubelet.
+  metadata:
+    creationTimestamp: "2025-10-20T13:25:33Z"
+    name: minikube.187035e3694503ed
+    namespace: default
+    resourceVersion: "51303"
+    uid: 76ba8382-65de-41bd-a8a5-dcb86a3215ed
+  reason: Starting
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 8
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:25:05Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:25:05Z"
+  message: 'Node minikube status is now: NodeHasSufficientMemory'
+  metadata:
+    creationTimestamp: "2025-10-20T13:25:33Z"
+    name: minikube.187035e372de0428
+    namespace: default
+    resourceVersion: "51326"
+    uid: 9ccafdc9-652f-4b0f-a251-a4080e9b5639
+  reason: NodeHasSufficientMemory
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 8
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:25:05Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:25:05Z"
+  message: 'Node minikube status is now: NodeHasNoDiskPressure'
+  metadata:
+    creationTimestamp: "2025-10-20T13:25:33Z"
+    name: minikube.187035e372dec533
+    namespace: default
+    resourceVersion: "51327"
+    uid: dfadc7a8-8f97-4a62-8f7b-e72f1690e3cd
+  reason: NodeHasNoDiskPressure
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 7
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:25:05Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:25:05Z"
+  message: 'Node minikube status is now: NodeHasSufficientPID'
+  metadata:
+    creationTimestamp: "2025-10-20T13:25:33Z"
+    name: minikube.187035e372df5e8c
+    namespace: default
+    resourceVersion: "51325"
+    uid: e8c32e98-477b-4691-a2de-7a40c2ce7511
+  reason: NodeHasSufficientPID
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:25:05Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:25:05Z"
+  message: Updated Node Allocatable limit across pods
+  metadata:
+    creationTimestamp: "2025-10-20T13:25:33Z"
+    name: minikube.187035e37f6c0f36
+    namespace: default
+    resourceVersion: "51307"
+    uid: e4691d37-599b-4a1f-9f16-24a2b23a7879
+  reason: NodeAllocatableEnforced
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:25:24Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:25:24Z"
+  message: 'Node minikube has been rebooted, boot id: 62e08d33-044a-4bb3-bae6-1a1cff0e02de'
+  metadata:
+    creationTimestamp: "2025-10-20T13:25:34Z"
+    name: minikube.187035e7dccc12c0
+    namespace: default
+    resourceVersion: "51344"
+    uid: 98705d5b-8877-45ed-bb64-3f9b3343c4a6
+  reason: Rebooted
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Warning
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:25:29Z"
+  involvedObject:
+    apiVersion: v1
+    kind: Node
+    name: minikube
+    uid: ab994c19-f893-4a6c-978c-6eea3db8ce03
+  kind: Event
+  lastTimestamp: "2025-10-20T13:25:29Z"
+  message: 'Node minikube event: Registered Node minikube in Controller'
+  metadata:
+    creationTimestamp: "2025-10-20T13:25:29Z"
+    name: minikube.187035e92879146d
+    namespace: default
+    resourceVersion: "51295"
+    uid: 2daa7808-09bd-4ca2-a8d7-43bcfe41d0b2
+  reason: RegisteredNode
+  reportingComponent: node-controller
+  reportingInstance: ""
+  source:
+    component: node-controller
+  type: Normal
+- action: StartKubeProxy
+  apiVersion: v1
+  eventTime: "2025-10-20T13:25:31.434057Z"
+  firstTimestamp: null
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: null
+  metadata:
+    creationTimestamp: "2025-10-20T13:25:31Z"
+    name: minikube.187035e988686316
+    namespace: default
+    resourceVersion: "51302"
+    uid: b2841792-a4fd-4c81-b30a-0e907d6977cc
+  reason: Starting
+  reportingComponent: kube-proxy
+  reportingInstance: kube-proxy-minikube
+  source: {}
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:37:57Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:37:57Z"
+  message: Starting kubelet.
+  metadata:
+    creationTimestamp: "2025-10-20T13:38:07Z"
+    name: minikube.1870369737dcf5de
+    namespace: default
+    resourceVersion: "51648"
+    uid: 8477cdc1-6dc4-484a-8900-f488c458ed27
+  reason: Starting
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 8
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:37:57Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:37:57Z"
+  message: 'Node minikube status is now: NodeHasSufficientMemory'
+  metadata:
+    creationTimestamp: "2025-10-20T13:38:07Z"
+    name: minikube.1870369739056ffa
+    namespace: default
+    resourceVersion: "51671"
+    uid: 064221f1-96cb-4a93-bc8e-205793bdd6b4
+  reason: NodeHasSufficientMemory
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 8
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:37:57Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:37:57Z"
+  message: 'Node minikube status is now: NodeHasNoDiskPressure'
+  metadata:
+    creationTimestamp: "2025-10-20T13:38:07Z"
+    name: minikube.187036973905f1ce
+    namespace: default
+    resourceVersion: "51672"
+    uid: 63f22d9b-4b71-4987-8a9b-a349c69a93e3
+  reason: NodeHasNoDiskPressure
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 7
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:37:57Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:37:57Z"
+  message: 'Node minikube status is now: NodeHasSufficientPID'
+  metadata:
+    creationTimestamp: "2025-10-20T13:38:07Z"
+    name: minikube.1870369739060b39
+    namespace: default
+    resourceVersion: "51670"
+    uid: 6b56672f-2d39-48b6-8008-d15b3d908f26
+  reason: NodeHasSufficientPID
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:37:57Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:37:57Z"
+  message: Updated Node Allocatable limit across pods
+  metadata:
+    creationTimestamp: "2025-10-20T13:38:07Z"
+    name: minikube.187036973ebaaf25
+    namespace: default
+    resourceVersion: "51652"
+    uid: 39251d48-a75e-4e83-9099-d897f9708107
+  reason: NodeAllocatableEnforced
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- action: StartKubeProxy
+  apiVersion: v1
+  eventTime: "2025-10-20T13:38:04.077199Z"
+  firstTimestamp: null
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: null
+  metadata:
+    creationTimestamp: "2025-10-20T13:38:04Z"
+    name: minikube.18703698c56f593d
+    namespace: default
+    resourceVersion: "51638"
+    uid: dbdaeb7b-e927-40b9-b29e-0e5e4fbfd2b0
+  reason: Starting
+  reportingComponent: kube-proxy
+  reportingInstance: kube-proxy-minikube
+  source: {}
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:38:05Z"
+  involvedObject:
+    apiVersion: v1
+    kind: Node
+    name: minikube
+    uid: ab994c19-f893-4a6c-978c-6eea3db8ce03
+  kind: Event
+  lastTimestamp: "2025-10-20T13:38:05Z"
+  message: 'Node minikube event: Registered Node minikube in Controller'
+  metadata:
+    creationTimestamp: "2025-10-20T13:38:05Z"
+    name: minikube.18703699152966ce
+    namespace: default
+    resourceVersion: "51640"
+    uid: e16ec030-829e-4ea9-bc6c-5a8ee353e5f0
+  reason: RegisteredNode
+  reportingComponent: node-controller
+  reportingInstance: ""
+  source:
+    component: node-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:48:53Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:48:53Z"
+  message: Starting kubelet.
+  metadata:
+    creationTimestamp: "2025-10-20T13:49:13Z"
+    name: minikube.1870372fe152984b
+    namespace: default
+    resourceVersion: "51864"
+    uid: 11cd0fa2-2a88-45d1-958c-adfcabef3b5b
+  reason: Starting
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 8
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:48:53Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:48:54Z"
+  message: 'Node minikube status is now: NodeHasSufficientMemory'
+  metadata:
+    creationTimestamp: "2025-10-20T13:49:13Z"
+    name: minikube.1870372ff1738572
+    namespace: default
+    resourceVersion: "51919"
+    uid: 94e1c7b1-fe9d-4ae7-b745-e22418be4019
+  reason: NodeHasSufficientMemory
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 8
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:48:53Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:48:54Z"
+  message: 'Node minikube status is now: NodeHasNoDiskPressure'
+  metadata:
+    creationTimestamp: "2025-10-20T13:49:13Z"
+    name: minikube.1870372ff173c19f
+    namespace: default
+    resourceVersion: "51920"
+    uid: a2949418-cc4e-47f5-98dd-41ac82ae2c87
+  reason: NodeHasNoDiskPressure
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 7
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:48:53Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:48:53Z"
+  message: 'Node minikube status is now: NodeHasSufficientPID'
+  metadata:
+    creationTimestamp: "2025-10-20T13:49:13Z"
+    name: minikube.1870372ff173e166
+    namespace: default
+    resourceVersion: "51917"
+    uid: cbdfc560-a5b2-4fc8-b797-d929423c9ab5
+  reason: NodeHasSufficientPID
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:48:53Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:48:53Z"
+  message: Updated Node Allocatable limit across pods
+  metadata:
+    creationTimestamp: "2025-10-20T13:49:13Z"
+    name: minikube.187037300b355b1d
+    namespace: default
+    resourceVersion: "51871"
+    uid: 7ab95444-acbe-4648-99d2-152ab40af2cb
+  reason: NodeAllocatableEnforced
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:49:13Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T13:49:13Z"
+  message: 'Node minikube has been rebooted, boot id: bb269489-acf1-4f9f-83f4-7cd5c094ab34'
+  metadata:
+    creationTimestamp: "2025-10-20T13:49:18Z"
+    name: minikube.1870373497ac87d9
+    namespace: default
+    resourceVersion: "51938"
+    uid: 2796884c-eed1-46bc-99c1-0e312089f3b9
+  reason: Rebooted
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Warning
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T13:49:22Z"
+  involvedObject:
+    apiVersion: v1
+    kind: Node
+    name: minikube
+    uid: ab994c19-f893-4a6c-978c-6eea3db8ce03
+  kind: Event
+  lastTimestamp: "2025-10-20T13:49:22Z"
+  message: 'Node minikube event: Registered Node minikube in Controller'
+  metadata:
+    creationTimestamp: "2025-10-20T13:49:23Z"
+    name: minikube.18703736b6746553
+    namespace: default
+    resourceVersion: "51945"
+    uid: c57556c4-4058-4114-8c13-2e7c884509c6
+  reason: RegisteredNode
+  reportingComponent: node-controller
+  reportingInstance: ""
+  source:
+    component: node-controller
+  type: Normal
+- action: StartKubeProxy
+  apiVersion: v1
+  eventTime: "2025-10-20T13:49:25.969257Z"
+  firstTimestamp: null
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: null
+  metadata:
+    creationTimestamp: "2025-10-20T13:49:26Z"
+    name: minikube.18703737895e682c
+    namespace: default
+    resourceVersion: "51952"
+    uid: a2e26411-4fdc-48d5-8c25-e76f748f38c7
+  reason: Starting
+  reportingComponent: kube-proxy
+  reportingInstance: kube-proxy-minikube
+  source: {}
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T14:00:43Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T14:00:43Z"
+  message: Starting kubelet.
+  metadata:
+    creationTimestamp: "2025-10-20T14:00:49Z"
+    name: minikube.187037d53680f285
+    namespace: default
+    resourceVersion: "52169"
+    uid: 87d67ffb-af9b-4ca1-9659-b1f8ace0b830
+  reason: Starting
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 8
+  eventTime: null
+  firstTimestamp: "2025-10-20T14:00:43Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T14:00:43Z"
+  message: 'Node minikube status is now: NodeHasSufficientMemory'
+  metadata:
+    creationTimestamp: "2025-10-20T14:00:49Z"
+    name: minikube.187037d5386b92f8
+    namespace: default
+    resourceVersion: "52220"
+    uid: 1c2dea14-0432-4612-bd0c-b203f25dea3f
+  reason: NodeHasSufficientMemory
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 8
+  eventTime: null
+  firstTimestamp: "2025-10-20T14:00:43Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T14:00:43Z"
+  message: 'Node minikube status is now: NodeHasNoDiskPressure'
+  metadata:
+    creationTimestamp: "2025-10-20T14:00:49Z"
+    name: minikube.187037d5386bc54b
+    namespace: default
+    resourceVersion: "52221"
+    uid: 936a3918-0ecd-44a1-a9fa-994cc3892043
+  reason: NodeHasNoDiskPressure
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 7
+  eventTime: null
+  firstTimestamp: "2025-10-20T14:00:43Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T14:00:43Z"
+  message: 'Node minikube status is now: NodeHasSufficientPID'
+  metadata:
+    creationTimestamp: "2025-10-20T14:00:49Z"
+    name: minikube.187037d538713804
+    namespace: default
+    resourceVersion: "52219"
+    uid: 1382c84c-65af-4542-a3dc-78857ad15371
+  reason: NodeHasSufficientPID
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T14:00:43Z"
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: "2025-10-20T14:00:43Z"
+  message: Updated Node Allocatable limit across pods
+  metadata:
+    creationTimestamp: "2025-10-20T14:00:49Z"
+    name: minikube.187037d53f34837f
+    namespace: default
+    resourceVersion: "52182"
+    uid: 7897db1e-16b7-4e63-bc80-f32c041806f5
+  reason: NodeAllocatableEnforced
+  reportingComponent: kubelet
+  reportingInstance: minikube
+  source:
+    component: kubelet
+    host: minikube
+  type: Normal
+- action: StartKubeProxy
+  apiVersion: v1
+  eventTime: "2025-10-20T14:00:51.635192Z"
+  firstTimestamp: null
+  involvedObject:
+    kind: Node
+    name: minikube
+    uid: minikube
+  kind: Event
+  lastTimestamp: null
+  metadata:
+    creationTimestamp: "2025-10-20T14:00:51Z"
+    name: minikube.187037d72e3e47b8
+    namespace: default
+    resourceVersion: "52245"
+    uid: 2207587e-ba61-456b-abd5-f6d979b7194b
+  reason: Starting
+  reportingComponent: kube-proxy
+  reportingInstance: kube-proxy-minikube
+  source: {}
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: null
+  firstTimestamp: "2025-10-20T14:00:52Z"
+  involvedObject:
+    apiVersion: v1
+    kind: Node
+    name: minikube
+    uid: ab994c19-f893-4a6c-978c-6eea3db8ce03
+  kind: Event
+  lastTimestamp: "2025-10-20T14:00:52Z"
+  message: 'Node minikube event: Registered Node minikube in Controller'
+  metadata:
+    creationTimestamp: "2025-10-20T14:00:52Z"
+    name: minikube.187037d75b7ee11d
+    namespace: default
+    resourceVersion: "52249"
+    uid: a8e26632-b47e-4953-8791-b138f475e350
+  reason: RegisteredNode
+  reportingComponent: node-controller
+  reportingInstance: ""
+  source:
+    component: node-controller
+  type: Normal
+kind: List
+metadata:
+  resourceVersion: ""

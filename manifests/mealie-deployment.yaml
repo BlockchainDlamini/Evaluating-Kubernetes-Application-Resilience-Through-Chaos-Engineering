@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mealie-deployment
+  labels:
+    app: mealie
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mealie
+  template:
+    metadata:
+      labels:
+        app: mealie
+    spec:
+      containers:
+      - name: nginx
+        image: hkotel/mealie:nightly
+        ports:
+        - containerPort: 9000
