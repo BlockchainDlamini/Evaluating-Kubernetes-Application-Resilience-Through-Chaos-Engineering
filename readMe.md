@@ -214,9 +214,6 @@ Mealie does not expose Prometheus metrics by default. To enable observability fo
 - Use the visual graph to trace execution stages.
 - Correlate with Prometheus and Grafana dashboards for deeper analysis.
 
-
-Here’s the updated section for your README, now including instructions for importing a FastAPI monitoring dashboard into Grafana:
-
 ---
 
 ## 9. Grafana Dashboard Setup
