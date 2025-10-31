@@ -236,8 +236,6 @@ kubectl port-forward svc/prom-grafana -n monitoring 3000:80
 3. Set the URL to: `http://prom-prometheus.monitoring.svc.cluster.local:9090`
 4. Click **Save & Test**
 
-Got it. Here's the revised section with **Option 1 omitted**, keeping only the JSON import method:
-
 ---
 
 ### Import FastAPI Monitoring Dashboard
