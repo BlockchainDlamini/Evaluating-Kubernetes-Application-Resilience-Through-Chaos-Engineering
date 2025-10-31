@@ -123,10 +123,6 @@ spec:
           replacement: 'chaos-exporter-service'
 ```
 
-Here’s your updated section in clean, structured Markdown:
-
----
-
 ## 7. Application Instrumentation (Latency and Error Rate)
 
 Mealie does not expose Prometheus metrics by default. To enable observability for chaos experiments—particularly latency and error rate—you must instrument the application manually or via a sidecar.
