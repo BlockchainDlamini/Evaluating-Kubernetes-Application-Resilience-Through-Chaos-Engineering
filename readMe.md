@@ -133,7 +133,7 @@ Mealie does not expose Prometheus metrics by default. To enable observability fo
    ```
 
 2. **Add middleware to track latency and error rate**  
-   Insert this into Mealie’s FastAPI app (e.g. in `main.py` or a dedicated metrics module):
+   Insert this into Mealie’s FastAPI app in app.py:
 
    ```python
    from prometheus_client import Summary, Counter, generate_latest, CONTENT_TYPE_LATEST
