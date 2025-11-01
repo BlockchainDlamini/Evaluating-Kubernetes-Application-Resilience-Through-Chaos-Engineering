@@ -3,11 +3,18 @@ kind: Service
 metadata:
   name: mealie-service
   namespace: default
+  labels:
+    app: mealie
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: "/metrics"
+    prometheus.io/port: "9000"
 spec:
   selector:
     app: mealie
   ports:
-    - protocol: TCP
-      port: 80
+    - name: http
+      protocol: TCP
+      port: 9000
       targetPort: 9000
   type: NodePort
